@@ -32,7 +32,7 @@ public class PersonaController {
 
     @PostMapping
     public ResponseEntity<Persona> createPersona(@RequestBody Persona persona) {
-        if (persona.getProvincia() == null || persona.getProvincia().getNombre() == null || persona.getProvincia().getNombre().isEmpty()) {
+        if (persona.getProvincia().getNombre().isEmpty()) {
             return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
         }
 
